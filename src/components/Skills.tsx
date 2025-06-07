@@ -22,12 +22,12 @@ const Skills = () => {
       title: 'BACKEND',
       icon: '⚙️',
       skills: [
-        { name: 'Node.js', level: 85, color: 'from-green-500 to-green-700' },
-        { name: 'Express.js', level: 80, color: 'from-gray-600 to-gray-800' },
-        { name: 'MongoDB', level: 82, color: 'from-green-600 to-green-800' },
-        { name: 'PostgreSQL', level: 78, color: 'from-blue-700 to-blue-900' },
-        { name: 'Firebase', level: 85, color: 'from-yellow-600 to-orange-600' },
-        { name: 'REST APIs', level: 90, color: 'from-indigo-500 to-purple-600' }
+        { name: 'Node.js', level: 25, color: 'from-green-500 to-green-700' },
+        { name: 'Express.js', level: 20, color: 'from-gray-600 to-gray-800' },
+        { name: 'MongoDB', level: 22, color: 'from-green-600 to-green-800' },
+        { name: 'PostgreSQL', level: 18, color: 'from-blue-700 to-blue-900' },
+        { name: 'Firebase', level: 28, color: 'from-yellow-600 to-orange-600' },
+        { name: 'REST APIs', level: 30, color: 'from-indigo-500 to-purple-600' }
       ]
     },
     {
@@ -173,7 +173,7 @@ const Skills = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-cyber-blue to-cyber-pink rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-cyber">
                   <span className="text-2xl">🔧</span>
                 </div>
-                <h4 className="font-bold text-cyber-blue mb-2">Backend</h4>
+                <h4 className="font-bold text-cyber-blue mb-2">Backend (Base)</h4>
                 <p className="text-sm text-muted-foreground">
                   Node.js • Express • MongoDB • Firebase
                 </p>

@@ -42,7 +42,7 @@ const About = () => {
           {/* Text Content */}
           <div className="space-y-6">
             <h3 className="text-2xl md:text-3xl font-bold text-cyber-purple neon-text">
-              Développeur Full Stack Passionné
+              Développeur Web Frontend Passionné
             </h3>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -74,7 +74,7 @@ const About = () => {
                 <span className="text-4xl font-black text-black">SB</span>
               </div>
               <h4 className="text-xl font-bold text-cyber-purple mb-2">Steeve Bille</h4>
-              <p className="text-muted-foreground mb-4">Full Stack Developer</p>
+              <p className="text-muted-foreground mb-4">Développeur Web Frontend</p>
               <div className="text-sm text-muted-foreground">
                 📍 Yaoundé, Cameroun<br />
                 💼 2+ années d'expérience<br />

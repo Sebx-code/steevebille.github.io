@@ -25,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-24">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-32">
       {/* Main Content */}
       <div className="text-center z-10 max-w-4xl mx-auto px-4">
         {/* Main Title */}
@@ -36,7 +36,7 @@ const Hero = () => {
         {/* Animated Subtitle */}
         <div className="mb-8">
           <span className="text-2xl md:text-3xl font-bold text-muted-foreground">
-            Développeur Web Full Stack • 
+            Développeur Web Frontend • 
           </span>
           <span className="text-2xl md:text-3xl font-bold text-cyber-purple neon-text ml-2">
             {displayText}
