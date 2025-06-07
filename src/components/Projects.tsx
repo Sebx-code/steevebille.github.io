@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -96,29 +95,29 @@ const Projects = () => {
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyber-purple to-cyber-blue mx-auto mb-12"></div>
           
-          {/* Social Proof */}
-          <div className="glass-morphism rounded-lg p-6 inline-block mb-12">
-            <div className="flex items-center justify-center space-x-8 text-sm">
+          {/* Social Proof - Responsive */}
+          <div className="glass-morphism rounded-lg p-4 sm:p-6 inline-block mb-12 w-full max-w-2xl">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm">
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyber-purple">10+</div>
-                <div className="text-muted-foreground">Projets Livrés</div>
+                <div className="text-xl sm:text-2xl font-bold text-cyber-purple">10+</div>
+                <div className="text-muted-foreground text-xs sm:text-sm">Projets Livrés</div>
               </div>
-              <div className="w-px h-8 bg-cyber-purple"></div>
+              <div className="hidden sm:block w-px h-8 bg-cyber-purple"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyber-blue">100%</div>
-                <div className="text-muted-foreground">Satisfaction Client</div>
+                <div className="text-xl sm:text-2xl font-bold text-cyber-blue">100%</div>
+                <div className="text-muted-foreground text-xs sm:text-sm">Satisfaction Client</div>
               </div>
-              <div className="w-px h-8 bg-cyber-purple"></div>
+              <div className="hidden sm:block w-px h-8 bg-cyber-purple"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyber-pink">2 ans</div>
-                <div className="text-muted-foreground">Expérience</div>
+                <div className="text-xl sm:text-2xl font-bold text-cyber-pink">2 ans</div>
+                <div className="text-muted-foreground text-xs sm:text-sm">Expérience</div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Filter Buttons - Responsive */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-2">
           {categories.map(category => (
             <Button
               key={category.id}
@@ -128,7 +127,7 @@ const Projects = () => {
                 filter === category.id 
                   ? 'bg-gradient-to-r from-cyber-purple to-cyber-blue text-black' 
                   : 'border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-black'
-              } font-semibold px-6 py-2 rounded-full transition-all duration-300`}
+              } font-semibold px-3 sm:px-6 py-2 rounded-full transition-all duration-300 text-xs sm:text-sm`}
             >
               {category.label}
             </Button>
