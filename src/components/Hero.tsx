@@ -25,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-24">
       {/* Main Content */}
       <div className="text-center z-10 max-w-4xl mx-auto px-4">
         {/* Main Title */}
