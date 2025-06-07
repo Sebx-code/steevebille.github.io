@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,6 +11,25 @@ interface Project {
   category: string;
   description: string;
   tech: string[];
+  status: string;
+  client: string;
+}
+
+interface NewProject {
+  title: string;
+  category: string;
+  description: string;
+  tech: string;
+  status: string;
+  client: string;
+}
+
+interface EditingProject {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  tech: string;
   status: string;
   client: string;
 }
@@ -42,7 +60,7 @@ const Dashboard = () => {
     }
   ]);
 
-  const [newProject, setNewProject] = useState({
+  const [newProject, setNewProject] = useState<NewProject>({
     title: '',
     category: '',
     description: '',
@@ -51,7 +69,7 @@ const Dashboard = () => {
     client: ''
   });
 
-  const [editingProject, setEditingProject] = useState<Project | null>(null);
+  const [editingProject, setEditingProject] = useState<EditingProject | null>(null);
 
   const handleLogin = () => {
     if (password === 'admin2025') {
@@ -81,8 +99,12 @@ const Dashboard = () => {
 
     const project: Project = {
       id: Date.now(),
-      ...newProject,
-      tech: newProject.tech.split(',').map(t => t.trim())
+      title: newProject.title,
+      category: newProject.category,
+      description: newProject.description,
+      tech: newProject.tech.split(',').map(t => t.trim()),
+      status: newProject.status,
+      client: newProject.client
     };
 
     setProjects([...projects, project]);
@@ -103,8 +125,13 @@ const Dashboard = () => {
 
   const handleEditProject = (project: Project) => {
     setEditingProject({
-      ...project,
-      tech: project.tech
+      id: project.id,
+      title: project.title,
+      category: project.category,
+      description: project.description,
+      tech: project.tech.join(', '),
+      status: project.status,
+      client: project.client
     });
   };
 
@@ -114,10 +141,13 @@ const Dashboard = () => {
     const updatedProjects = projects.map(p => 
       p.id === editingProject.id 
         ? {
-            ...editingProject,
-            tech: typeof editingProject.tech === 'string' 
-              ? editingProject.tech.split(',').map(t => t.trim())
-              : editingProject.tech
+            id: editingProject.id,
+            title: editingProject.title,
+            category: editingProject.category,
+            description: editingProject.description,
+            tech: editingProject.tech.split(',').map(t => t.trim()),
+            status: editingProject.status,
+            client: editingProject.client
           }
         : p
     );
@@ -260,7 +290,7 @@ const Dashboard = () => {
                       <div className="flex items-center space-x-4 text-sm">
                         <span className="text-cyber-blue">Client: {project.client}</span>
                         <span className="text-cyber-pink">Status: {project.status}</span>
-                        <span className="text-muted-foreground">Tech: {Array.isArray(project.tech) ? project.tech.join(', ') : project.tech}</span>
+                        <span className="text-muted-foreground">Tech: {project.tech.join(', ')}</span>
                       </div>
                     </div>
                     <div className="flex space-x-2 ml-4">
@@ -415,7 +445,7 @@ const Dashboard = () => {
                   placeholder="Description"
                 />
                 <Input
-                  value={Array.isArray(editingProject.tech) ? editingProject.tech.join(', ') : editingProject.tech}
+                  value={editingProject.tech}
                   onChange={(e) => setEditingProject({...editingProject, tech: e.target.value})}
                   className="bg-black/20 border-cyber-purple/30"
                   placeholder="Technologies"
